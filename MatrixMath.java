@@ -8,14 +8,14 @@
 public class MatrixMath
 {
     // instance variables - replace the example below with your own
-    private int[][] data;
+    private int[][] A;
 
     /**
      * Constructor for objects of class MatrixMath
      */
-    public MatrixMath(int[][] data)
+    public MatrixMath(int[][] A)
     {
-        // initialise instance variables
+        this.A = A;
        
     }
 
@@ -26,9 +26,18 @@ public class MatrixMath
      * @return    int[]
      */
     public int[] rowSum()
-    {
-        return null;
+{
+int[] sumRow= new int[A.length];
+
+for (int i=0 ; i<A.length ; i++){
+    int sum=0;
+    for (int j=0 ; j<A[i].length ; j++){
+        sum+=A[i][j];
     }
+    sumRow[i]=sum;
+    }
+    return sumRow;
+}
     
         /**
      * Find the average of all the values in each row
@@ -37,9 +46,13 @@ public class MatrixMath
      */
     public double[] rowAve()
     {
-        return null;
+        double[] haha = new double[A.length];
+        int[] sums = rowSum();
+        for(int i = 0;i<A.length;i++){
+            haha[i]=sums[i]/A[i].length;
     }
-    
+    return haha;
+}
         /**
      * Find the sum of all the numbers in column
      * 
@@ -48,8 +61,17 @@ public class MatrixMath
      */
     public int[] colSum()
     {
-        return null;
+        int [] D = new int[A.length];
+    int sumsum = 0;
+    for(int i = 0; i<A.length; i++){
+      for(int c = 0; c<A[i].length; c++){
+        sumsum+=A[c][i];
+      }
+      D[i] = sumsum;
+      sumsum = 0;
     }
+    return D;
+}
     
      /**
      * Find the average of all the values in each row
