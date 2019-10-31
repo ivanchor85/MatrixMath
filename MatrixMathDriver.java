@@ -21,9 +21,8 @@ public class MatrixMathDriver
 		 */
         System.out.println(Arrays.toString(mathA.rowSum()));
         System.out.println(Arrays.toString(mathA.colSum()));
-        mathA.rowAve();
-        mathA.colSum();
-        mathA.colAve();
+        System.out.println(Arrays.toString(mathA.rowAve()));
+        System.out.println(Arrays.toString(mathA.colAve()));
         
         MatrixMath mathB = new MatrixMath(B);
         mathB.rowSum();

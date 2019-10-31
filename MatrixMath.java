@@ -49,10 +49,10 @@ for (int i=0 ; i<A.length ; i++){
         double[] haha = new double[A.length];
         int[] sums = rowSum();
         for(int i = 0;i<A.length;i++){
-            haha[i]=sums[i]/A[i].length;
+            haha[i]=(sums[i]+0.0)/A[i].length;
     }
     return haha;
-}
+    }
         /**
      * Find the sum of all the numbers in column
      * 
@@ -61,10 +61,10 @@ for (int i=0 ; i<A.length ; i++){
      */
     public int[] colSum()
     {
-        int [] D = new int[A.length];
+        int [] D = new int[A[0].length];
     int sumsum = 0;
-    for(int i = 0; i<A.length; i++){
-      for(int c = 0; c<A[i].length; c++){
+    for(int i = 0; i<A[0].length; i++){
+      for(int c = 0; c<A.length; c++){
         sumsum+=A[c][i];
       }
       D[i] = sumsum;
@@ -80,7 +80,12 @@ for (int i=0 ; i<A.length ; i++){
      */
     public double[] colAve()
     {
-        return null;
+        double[] haha = new double[A.length];
+        int[] sums = colSum();
+        for(int i = 0;i<A.length;i++){
+            haha[i]=(sums[i]+0.0)/A.length;
     }
+    return haha;
     
+}
 }
